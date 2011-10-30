@@ -96,3 +96,21 @@ end
 BlogEntry.new
 
 entry2 = BlogEntry.new("I left my hoodie", :confused, "yes i left it")
+
+# level 8 - array methods
+blog = [entry, entry2]
+
+blog.sort_by { |entry| entry.time}.reverse
+blog.find_all { |entry| entry.fulltext.match(/cadillac/i)}
+blog << new_entry
+
+blog.map { |entry| entry.mood}
+
+blog.each do |entry|
+  Popup.make do   
+    h1 'My blog'
+    h2 entry.title
+    p entry.fulltext
+    p entry.time
+  end
+end
