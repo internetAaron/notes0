@@ -73,3 +73,26 @@ Popup.make do
     end
   end
 end
+# level 7 - Classes, accessors, instance variables
+class BlogEntry
+  attr_accessor :title, :time, :fulltext, :mood
+end
+
+entry = BlogEntry.new
+entry.title = "today mt. hood was stolen!"
+entry.time = Time.now
+entry.mood = :sick
+entry.fulltext = "I can't believe it's stolen!"
+
+# default attribute value
+class BlogEntry
+  def initialize (  title, mood, fulltext)
+    # called 'instance variables'
+    @time = Time.now
+    @title, @mood, @fulltext = title, mood, fulltext
+  end
+end
+
+BlogEntry.new
+
+entry2 = BlogEntry.new("I left my hoodie", :confused, "yes i left it")
