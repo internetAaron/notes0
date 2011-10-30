@@ -39,3 +39,37 @@ f << "Cat and Girl"
 end
 File.mtime("/Home/comics.txt")
 File.mtime("/Home/comics.txt").hour
+# level 6 - creating methods, using libs
+def load_comics( path )
+  comics = {}
+  File.foreach(path) do |line|
+    name, url = line.split(': ')
+    comics[name] = url.strip
+  end
+  comics
+end
+require 'popup'
+Popup.goto "http:/bing.com"
+
+Popup.make {
+  h1 "My Links"
+  link "Go to Bing", "http://bing.com"
+}
+
+Popup.make do
+  h1 "Things to do"
+  list do
+    p "Try out Ruby"
+    p "Ride a tiger"
+    p "Down River"
+  end
+end
+
+Popup.make do 
+  h1 "Comics on the Web"
+  list do
+    comics.each do |name, url|
+      link name, url
+    end
+  end
+end
