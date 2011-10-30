@@ -28,3 +28,14 @@ ratings = Hash.new(0)
 books.values.each {|rate| ratings[rate] += 1}
 ratings #shows group by rating
 5.times {print "Odelay!"}
+# level 5 - Files 
+Dir.entries "/"
+Dir["/*.txt"]
+print File.read("/comics.txt")
+FileUtils.cp('/comics.txt', '/Home/comics.txt')
+Dir["/Home/*.txt"]
+File.open("/Home/comics.txt", "a") do |f|
+f << "Cat and Girl"
+end
+File.mtime("/Home/comics.txt")
+File.mtime("/Home/comics.txt").hour
