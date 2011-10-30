@@ -8,3 +8,11 @@
 [12, 47, 35].max
 ticket = [12, 47, 35]
 ticket.sort!
+# level 3
+poem['toast'] = 'honeydew'
+poem.reverse
+poem.lines.to_a.reverse
+print poem.lines.to_a.reverse.join
+poem.include? "my hand"
+poem.downcase
+poem.delete
