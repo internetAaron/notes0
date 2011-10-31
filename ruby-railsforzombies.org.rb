@@ -44,17 +44,58 @@ puts b.status
   # or
   t = Tweet.find(3)
   t.attributes = {
-    :zombie = "Mr.E"
+    :zombie => "Mr.E"
   }
   t.save
   # or
   t = Tweet.find(3)
-  t.update_attributes = {
-    :zombie = "Mr.E"
-  }
+  t.update_attributes(
+    :zombie => "Mr.E"
+  )
 # d
   t = Tweet.find(3)
   t.destroy
   # or
   Tweet.find(3).destroy
   Tweet.destroy_all
+  
+# level 1, challenge 1/6 - find
+# Find Zombie where id = 1 and store it in a variable
+z = Zombie.find(1)
+# Print out the zombie's name and graveyard.
+puts z.name, z.graveyard
+
+# level 1, challenge 2/6 - create
+# Create a new Zombie
+Tweet.create(:name => "Zed", :graveyard => "Central"
+# Find the zombie you just created by its ID
+z = Zombie.find(4)
+
+# level 1, challenge 3/6 - find2
+# Find the last zombie in the database, but don't use ID's
+Zombie.last
+# Find the first zombie in the database, but don't use ID's
+Zombie.first
+
+# level 1, challenge 4/6 - query
+# Find all Zombies ordered by their names
+Zombie.order(":name")
+# Do the same query but limit to just 2 Zombies
+Zombie.order(":name").limit(2)
+
+# level 1, challenge 5/6 - update
+# Update Zombie 3's graveyard to 'Benny Hills Memorial'
+Zombie.find(3).update_attributes(
+  :graveyard => "Benny Hills Memorial"
+)
+# Update Zombie 3's name and graveyard at the same time using update_attributes
+Zombie.find(3).update_attributes(
+  :graveyard => "Benny Hills Memorial"
+  :name => "Zed"
+)
+
+# level 1, challenge 6/6 - destroy
+# Destroy Zombie where ID = 3
+Zombie.find(3).destroy
+# Destroy all the Zombies in one fell-swoop!
+Zombie.destroy_all
