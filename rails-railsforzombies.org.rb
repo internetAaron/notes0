@@ -137,7 +137,7 @@ class Tweet < ActiveRecord::Base
   has_many :tweets #plural!
 end
 
-z = Zombied.find(2)
+z = Zombie.find(2)
 t = Tweet.create(
     :status => "tastes great"
   , :zombie => z
@@ -146,3 +146,76 @@ t.zombie
 t.zombie.name
 z.tweets
 z.tweets.count
+
+# level 2, challenges
+#challenge 1 - create a model
+class Zombie < ActiveRecord::Base
+  validates_presence_of :name #challenge2 
+  validates_uniqueness_of :name #challenge3
+  
+  #challenge4
+  # Do both uniqueness and presence validation on a Zombie's name on a single line, using the new syntax
+  validates :name, :presence => true, :uniqueness => true
+end
+
+# Use your newly created model to count the number of Zombies
+Zombie.all.count
+
+# Verify that the validation works by trying to create a zombie with no name
+z = Zombie.new
+# z.name = 'missing'
+z.save
+
+# Verify that the validation works by trying to create a zombie with a duplicate name
+z = Zombie.new
+z.name = 'Bob'
+z.save
+
+# level 2, challenge 5/6 - belongs to
+# A Weapon should belong to a Zombie. Create that relationship
+class Weapon < ActiveRecord::Base
+  belongs_to :zombie
+end
+
+# Create a weapon for an existing Zombie
+w = Weapon.new
+w.name = 'sword'
+w.strength = 8
+w.zombie = 3
+w.save
+
+# ?why not
+Weapon.create(
+   :name => "sword"
+ , :strength => 8
+ , :zombie_id => 3
+)
+
+Weapon.create( :name => "sword") #ok
+Weapon.create( :name => "sword", :strength => 6) #ok
+Weapon.create( :name => "sword", :strength => 6, :zombie_id => 3) #ok
+
+#amazing! doesn't work with leading comas
+Weapon.create(
+ :name => "sword",
+ :strength => 8,
+ :zombie_id => 3
+)
+
+# level 2, challenge 6/6 - relationship find
+# Assuming the models and relationships are properly defined, find all the weapons that belong to Zombie Ash
+
+?
+z = Zombie.where(:name => 'Ash')
+Weapon.where( :id => z)
+
+# why not?
+z.weapons
+
+# this works
+z = Zombie.find(1)
+z.weapons
+
+z = Zombie.where(:name => 'Ash')
+z = Zombie.find(z)
+z.weapons
