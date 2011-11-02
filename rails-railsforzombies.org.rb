@@ -99,3 +99,50 @@ Zombie.find(3).update_attributes(
 Zombie.find(3).destroy
 # Destroy all the Zombies in one fell-swoop!
 Zombie.destroy_all
+
+# level 2 video
+
+# app/models/tweet.rb
+class Tweet < ActiveRecord::Base
+  validates_presence_of :status
+end
+
+validates_..
+..presence_of :status
+..numericality_of :fingers
+..uniqueness_of :toothmarks
+..confirmation_of :password
+..acceptance_of :zombification
+..length_of :password, :minimum => 3
+..format_of :email, :with => /regex/i
+..inclusion_of :age, :in => 21..99
+..exclusion_of :age, :in => 0..21, :message => "You must be older"
+
+a) validates :status, :presence => true
+b) validates :status, :length => { :minimum => 3}
+a & b merges to:
+c) validates :status, :presence => true, :length => { :minimum => 3}
+
+tweets table updated with column "zombie_id"
+
+# relationships
+
+# app/models/tweet.rb
+class Tweet < ActiveRecord::Base
+  belongs_to :zombie #singular!
+end
+
+# app/models/zombie.rb
+class Tweet < ActiveRecord::Base
+  has_many :tweets #plural!
+end
+
+z = Zombied.find(2)
+t = Tweet.create(
+    :status => "tastes great"
+  , :zombie => z
+)
+t.zombie
+t.zombie.name
+z.tweets
+z.tweets.count
