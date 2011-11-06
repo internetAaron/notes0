@@ -351,3 +351,75 @@ Show a tweet tweet /tweets/1
 Edit a tweet edit_tweet_path(tweet) /tweets/1/edit
 Delete a tweet tweet, :method => :delete /tweets/1
 
+# level 3 challenge 1
+# Print out the Zombie's name and graveyard
+<% zombie = Zombie.first %>
+<h1><%= zombie.name %></h1>
+<p>
+  <%= zombie.graveyard %>
+</p>
+
+# 3-02
+# Link to show the zombie. Use the zombie's name as the anchor text
+<% zombie = Zombie.first %>
+
+<p>
+<%= link_to zombie.name, zombie %>
+</p>
+
+# Use the API documentation to figure out how to add a css class called 'bloody' to the html of the link
+<% zombie = Zombie.first %>
+
+<p>
+<%= link_to zombie.name, zombie, :class => 'bloody' %>
+</p>
+
+# 3-3
+# Use an each block to print the names of all the Zombies
+<% zombies = Zombie.all %>
+
+<ul>
+<% zombies.each do |zombie| %>
+  <%= zombie.name %>
+<% end %>
+</ul>
+
+# Link to show all the Zombies in the each block
+<% zombies = Zombie.all %>
+
+<ul>
+<% zombies.each do |zombie| %>
+  <%= link_to zombie.name, zombie %>
+<% end %>
+</ul>
+
+# 3-4
+# In the each block, if a Zombie has more than 1 tweet, print out SMART ZOMBIE
+# Use an else to print out a different message for not so smart Zombies
+<% zombies = Zombie.all %>
+
+<ul>
+  <% zombies.each do |zombie| %>
+    <li>
+      <%= zombie.name %>
+      <% if zombie.tweets.size > 1 %>
+        <em>SMART ZOMBIE</em>
+        <% else %>
+        <em>not so smart ZOMBIE</em>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
+
+# 3-5
+# In the each block, make the Zombie's name link to it's edit page
+# Link to the new Zombie page outside of the each block
+<% zombies = Zombie.all %>
+
+<ul>
+  <% zombies.each do |zombie| %>
+    <li>
+      <%= link_to zombie.name, edit_zombie_path(zombie) %>
+    </li>
+  <% end %>
+</ul>
