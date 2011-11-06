@@ -583,3 +583,37 @@ class ZombiesController < ApplicationController
    end    
   end
 end
+
+# level 5/5
+
+
+
+# 1/5
+# Create a resources route for zombies
+RailsForZombies::Application.routes.draw do
+  resources :zombies
+end
+
+# 2/5
+# Create a custom route so that /undead will go to the undead action on the ZombiesController
+RailsForZombies::Application.routes.draw 
+  match 'undead' => "Zombies#undead"
+end
+
+#3/5
+# Create redirect /undead to /zombies
+RailsForZombies::Application.routes.draw 
+  match 'undead' => redirect('zombies')
+end
+
+# 4/5
+# Create a root route to ZombiesController index action
+RailsForZombies::Application.routes.draw do
+  root :to => 'Zombies#index'
+end
+
+# 5/5
+Create a named route. It should generate a path like '/zombies/:name' where :name is a parameter, and points to the index action in ZombiesController. Name the route 'graveyard'
+RailsForZombies::Application.routes.draw do
+  match 'zombies/:name' => 'Zombies#index'
+end
