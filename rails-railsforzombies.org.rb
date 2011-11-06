@@ -457,7 +457,7 @@ class TweetsController < ApplicatoinController
   show - show a single
   new - show new tweet form
   edit
-  create ???
+  create
   update
   destroy
   
@@ -533,5 +533,53 @@ def check_auth
   if session[:zombie_id] != @tweet.zombie_id
     redirect_to(tweets_path,
       :notice => "sorry")
+  end
+end
+
+# level 4 challenges
+# Create the show action for a Zombies Controller which finds a Zombie based on params[:id].
+# Finish the respond_to block so the action returns xml format
+def show
+  @zombie = Zombie.find(params[:id])
+  
+  respond_to do |format|
+    # format.xml { render :xml => @zombie}
+    # Implement a JSON respond to format
+    format.json { render :json => @zombie}
+  end
+  
+end
+
+# 3/4
+# Write a create action that will create a new Zombie from the params and then redirect to the created zombie's show page
+def create
+
+  @zombie = Zombie.create(params[:zombie])
+  
+  redirect_to(zombies_path :notice => 'you are being redirected')
+# ? why not  
+# redirect_to(zombie_path)
+
+end
+
+# 4/4
+# Add a before filter which calls a method to check if a zombie has no tweets. Redirect to zombies_path if they dont have tweets. Only on show.
+class ZombiesController < ApplicationController
+  before_filter :find_zombie
+  before_filter :find_tweet, :only => [:show]
+
+  def show
+    render :action => :show
+  end
+
+  def find_zombie
+    @zombie = Zombie.find params[:id]
+  end
+  
+  def find_tweet
+   zombie = find_zombie  
+   if zombie.tweets.size < 1
+      redirect_to(zombies_path)
+   end    
   end
 end
