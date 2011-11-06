@@ -219,3 +219,135 @@ z.weapons
 z = Zombie.where(:name => 'Ash')
 z = Zombie.find(z)
 z.weapons
+
+
+# level 3 video
+zombie_twitter
+- app
+- - views
+- - - zombies
+- - - tweets
+- - - - index.html.erb (list all tweets)
+- - - - show.html.erb (to view a tweet)
+
+'erb' - 'embedded ruby', ruby inside html
+
+<% - evaluate ruby
+<=% - evaluate & print
+
+# original markup
+<!DOCTYPE html>
+<html>
+ <head><title>Twitter for Zombies</title></hea
+<body>
+  <img src="/images/twitter.png" />
+</body></html>
+  <% tweet = Tweet.find(1) %>
+  <h1><%= tweet.status %></h1>
+  <p>Posted by <%= tweet.zombie.name %></p>
+
+# splitted markup
+/app/views/layouts/application.html.erb
+<!DOCTYPE html>
+<html>
+ <head><title>Twitter for Zombies</title></head>
+ <!--specific rails tags-->
+  <%= stylesheet_link_tag :all %>
+  <%= javascript_include_tag :defaults %>
+  <%= csrf_meta_tag %>
+<body>
+  <img src="/images/twitter.png" />
+</body></html>
+
+
+/app/views/tweets/show.html.erb
+<% tweet = Tweet.find(1) %>
+  <h1><%= tweet.status %></h1>
+  <p>Posted by <%= tweet.zombie.name %></p>
+  
+  
+ <!--specific rails tags-->
+  <%= stylesheet_link_tag :all %>
+  zombie_twitter
+  - public
+  -- stylesheets
+  
+  <%= javascript_include_tag :defaults %>
+  zombie_twitter
+  - public
+  -- javascripts
+  
+  <%= csrf_meta_tag %>
+  what is that?
+  
+# links
+<p>Posted by <%= tweet.zombie.name %></p>
+
+
+<%= link_to tweet.zombie.name, zombie_path(tweet.zombie) %>
+
+# renders to 
+
+<a href="/zombies/1">Ash </a>
+
+# or simplier
+<%= link_to tweet.zombie.name, tweet.zombie %>
+
+todo: look for link_to
+in
+1 rails sourcecode from github
+2 api.rubyonrails.org
+3 apidock.com/rails
+4 railsapi.com
+
+
+
+/app/views/tweets/index.html.erb
+<h1>Listing tweets</h1>
+<table>
+  <tr>
+    <th>Status</th>
+    <th>Zombie</th>
+  </tr>
+<% Tweet.all.each do |tweet| %>
+  <tr>
+    <td><%= link_to tweet.status, tweet %></td>
+    <td><%= link_to tweet.zombie.name,  %> </td>
+    </tr>
+    </table>
+<% end %>
+
+Tweet class
+Tweet.all array of tweets
+tweet single tweet
+
+/app/views/tweets/index.html.erb
+<% Tweet.all.each do |tweet| %>
+  <tr>
+    <td><%= link_to tweet.status, tweet %></td>
+    <td><%= link_to tweet.zombie.name, tweet.zombie %></td>
+    <td><%= link_to "Edit", edit_tweet_path(tweet) %></td>
+    <td><%= link_to "Delete", tweet, :method => :delete %></td>
+  </tr>
+<% end %>
+
+
+<% tweets = Tweet.all %>
+
+<% tweets.each do |tweet| %>
+...
+<% end %>
+
+<% if tweets.size == 0 %>
+  <em>No tweets found</em>
+<% end %>  
+
+List all tweets tweets_path /tweets
+New tweet form new_tweet_path /tweets/new
+
+tweet = Tweet.find(1)
+
+Show a tweet tweet /tweets/1
+Edit a tweet edit_tweet_path(tweet) /tweets/1/edit
+Delete a tweet tweet, :method => :delete /tweets/1
+
