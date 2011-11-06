@@ -262,8 +262,8 @@ zombie_twitter
 
 /app/views/tweets/show.html.erb
 <% tweet = Tweet.find(1) %>
-  <h1><%= tweet.status %></h1>
-  <p>Posted by <%= tweet.zombie.name %></p>
+<h1><%= tweet.status %></h1>
+<p>Posted by <%= tweet.zombie.name %></p>
   
   
  <!--specific rails tags-->
@@ -423,3 +423,115 @@ Delete a tweet tweet, :method => :delete /tweets/1
     </li>
   <% end %>
 </ul>
+
+
+# level 4 notes
+zombie_twitter
+- app
+-- controllers
+---- tweets_controller.rb
+
+# if instead of
+/app/views/tweets/show.html.erb
+# wants 
+/app/views/tweets/status.html.erb
+<h1><%= @tweet.status %></h1>
+<p>Posted by <%= @tweet.zombie.name %></p>
+
+/app/controllers/tweets_controller.rb
+class TweetsController < ApplicatoinController
+  def show
+    @tweet = Tweet.find(params[:id])
+    render :action => status
+    
+    respond_to do |format|
+      format.html # show.html.erb
+      format.xml  { render :xml => @tweet}
+      format.json { render :json => @tweet}
+    end
+    
+  end
+  
+  defs:
+  index - list all tweets
+  show - show a single
+  new - show new tweet form
+  edit
+  create ???
+  update
+  destroy
+  
+  # authorization
+  def edit
+    @tweet = Tweet.find(params[:id])
+    
+    if session[:zombie_id] != @tweet.zombie_id
+      # edition not allowed
+      flash[:notice] = "Sorry, not allowed"
+      redirect_to(tweets_path)
+      # or
+      redirect_to(tweets_path
+        :notice => "sorry")
+    end
+  end
+end
+
+main template should be edited
+
+/app/views/layouts/application.html.erb
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Twitter for Zombies</title> 
+  <%= stylesheet_link_tag :all %>
+  <%= javascript_include_tag :defaults %>
+  <%= csrf_meta_tag %>
+</head>
+<body>
+  <img src="/images/twitter.png" />
+  
+  <% if flash[:notice] %>
+    <div id="notice"><%= flash[:notice] %></div>
+  <% end %>
+  
+  <%= yield %>
+</body></html>
+
+
+
+
+
+/tweets/1.json
+{"tweet":{"id":1,"status":"Where can I get a good bite to eat?","zombie_id":1}}
+
+/tweets/1.xml
+<?xml version="1.0" encoding="UTF-8"?>
+<tweet>
+  <id type="integer">1</id>
+  <status>Where can I get a good bite to eat?</status>
+  <zombie-id type="integer">1</zombie-id>
+</tweet>
+
+
+edit, update, destroy needs authorization
+so,
+  @tweet = Tweet.find(params[:id])
+
+is moved out of other methods
+into get_tweet:
+
+before_filter :get_tweet, :only => [:edit, :update, :destroy]
+
+before_filter :check_auth, :only => [:edit, :update, :destroy]
+
+def get_tweet
+  @tweet = Tweet.find(params[:id])
+end
+
+def check_auth
+  if session[:zombie_id] != @tweet.zombie_id
+    redirect_to(tweets_path,
+      :notice => "sorry")
+  end
+end
