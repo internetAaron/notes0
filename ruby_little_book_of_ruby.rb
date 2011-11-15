@@ -73,3 +73,69 @@ end
 tax = subtotal * taxrate
 puts "now, so amount to pay is #{tax}"
 
+# chapter 02: 	Classes and Objects
+
+class MyClass
+end
+
+ob = MyClass.new
+
+puts ob.class
+
+class MyClass
+  def greetthem
+    puts 'hi'
+  end
+end
+
+testob = MyClass.new
+testob.greetthem
+
+# instance variable
+class Dog
+  def set_name(name)
+    @nickname = name
+  end
+end
+
+dog1 = Dog.new
+dog2 = Dog.new
+
+dog1.set_name('Aaron')
+dog2.set_name('Bonanza')
+
+
+class Dog
+  def get_name
+    return @nickname
+  end
+  def talk
+    return 'woof, woof!'
+  end
+end
+
+puts(dog1.get_name)
+puts(dog1.talk)
+
+
+class Dog
+  def initialize (aName, aDescription)
+    @name = aName
+    @description = aDescription
+  end
+  def get_description
+    return @description
+  end
+end
+
+another_dog = Dog.new('Ceazar', 'guard dog')
+puts(another_dog.get_description)
+puts(another_dog)
+
+class Dog 
+  def to_s
+    puts "#{@name}, the #{@description}"
+  end
+end  
+
+puts(another_dog)
