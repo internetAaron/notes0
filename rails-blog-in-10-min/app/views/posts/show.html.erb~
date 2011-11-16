@@ -30,5 +30,5 @@
 
 <%= form_for [@post, @post.comments.build] do |f| %>
   <p><%= f.text_area :text, :size => '40x10'%></p>
-  <p><%= f.busmit "Post comment"%></p>
+  <p><%= f.submit "Post comment"%></p>
 <% end %>
