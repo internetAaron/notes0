@@ -1,6 +1,6 @@
 <h1><%= @post.title%></h1>
 
-<%= @post.text =>
+<%= @post.text %>
 
 
 <p id="notice"><%= notice %></p>
@@ -20,3 +20,15 @@
 <%= link_to 'Back', posts_path %>
 |
 <%= link_to 'Delete', @post, :method => :delete, :confirm => "Are you sure?" %>
+
+<h2>Comments</h2>
+
+<% @post.comments.each do |comment| %>
+  <p><%= comment.text%></p>
+  <p><%= time_ago_in_words comment.created_at%></p>
+<% end %>
+
+<%= form_for [@post, @post.comments.build] do |f| %>
+  <p><%= f.text_area :text, :size => '40x10'%></p>
+  <p><%= f.busmit "Post comment"%></p>
+<% end %>
