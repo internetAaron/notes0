@@ -2,15 +2,13 @@
 
 <% @posts.each do |post| %>
   <h2><%= post.title %></h2>
+  <%= truncate post.text %>
   <tr>
-    <td><%= post.title %></td>
-    <td><%= post.text %></td>
     <td><%= link_to 'Show', post %></td>
     <td><%= link_to 'Edit', edit_post_path(post) %></td>
     <td><%= link_to 'Destroy', post, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
-</table>
 
 <br />
 
