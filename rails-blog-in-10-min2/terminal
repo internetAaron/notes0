@@ -1,1 +1,3 @@
 rails new rails-blog-in-10-min2
+cd rails-blog-in-10-min2
+rails g scaffold post title:string text:text
