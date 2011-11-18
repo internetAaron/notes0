@@ -12,3 +12,8 @@
   <p><%= time_ago_in_words comment.created_at %></p>
   <p><%= link_to "Delete this!", [@post, comment], :method => :delete, :confirm => "yes?" %></p>
 <% end %>
+
+<%= form_for [@post, @post.comments.build] do |f| %>
+  <p><%= f.text_area :text, :size => '40x10' %></p>
+  <p><%= f.submit 'Post it' %></p>
+<% end %>
