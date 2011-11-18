@@ -4,7 +4,7 @@ RailsBlogIn10Min3::Application.routes.draw do
   get "comments/destroy"
 
   resources :posts do
-    resoruces :comments
+    resources :comments
   end
 
   # The priority is based upon order of creation:
