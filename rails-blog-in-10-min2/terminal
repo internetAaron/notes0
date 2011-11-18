@@ -3,3 +3,4 @@ cd rails-blog-in-10-min2
 rails g scaffold post title:string text:text
 rails g model comment post_id:integer text:text
 rake db:migrate
+rails g controller comments create destroy
