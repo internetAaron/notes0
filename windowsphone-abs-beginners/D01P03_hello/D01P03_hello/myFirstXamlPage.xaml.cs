@@ -13,17 +13,16 @@ using Microsoft.Phone.Controls;
 
 namespace D01P03_hello
 {
-    public partial class MainPage : PhoneApplicationPage
+    public partial class myFirstXamlPage : PhoneApplicationPage
     {
-        // Constructor
-        public MainPage()
+        public myFirstXamlPage()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, RoutedEventArgs e)
+        private void clickMeButton_Click(object sender, RoutedEventArgs e)
         {
-            myTextBlock.Text = "really works?";
+            myTextBlock.Text = "hello again!";
         }
     }
 }
