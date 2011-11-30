@@ -22,12 +22,16 @@
 
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock x:Name="ApplicationTitle" Text="MY APPLICATION" Style="{StaticResource PhoneTextNormalStyle}"/>
-            <TextBlock x:Name="PageTitle" Text="page name" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+            <TextBlock x:Name="ApplicationTitle" Text="the app" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock x:Name="PageTitle" Text="Ultra task" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
-        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0"></Grid>
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <TextBlock Height="60" HorizontalAlignment="Left" Margin="12,162,0,0" Name="textBlock1" Text="" VerticalAlignment="Top" Width="105" />
+            <TextBox Height="72" HorizontalAlignment="Left" Margin="12,6,0,0" Name="textBox1" Text="..." VerticalAlignment="Top" Width="460" />
+            <Button Content="process it" Height="72" HorizontalAlignment="Left" Margin="290,84,0,0" Name="button1" VerticalAlignment="Top" Width="160" Click="button1_Click" />
+        </Grid>
     </Grid>
  
     <!--Sample code showing usage of ApplicationBar-->

@@ -20,5 +20,18 @@ namespace D01_homework
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
+            string secret = "2 3 42 !";
+
+            textBlock1.Text = (textBox1.Text == secret) ? "You won!" : "Try again";
+        }
+
+        private void textBox1_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
     }
 }
