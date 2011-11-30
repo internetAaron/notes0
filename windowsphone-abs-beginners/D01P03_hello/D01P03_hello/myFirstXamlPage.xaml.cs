@@ -22,7 +22,29 @@ namespace D01P03_hello
 
         private void clickMeButton_Click(object sender, RoutedEventArgs e)
         {
-            myTextBlock.Text = "hello again!";
+            string myvalue;
+            myvalue = "you typed" + textBox1.Text;
+            myTextBlock.Text = myvalue;
+        }
+
+        private void textBox1_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            myTextBlock.Text = "you typed" + textBox1.Text;
+        }
+
+        private void LayoutRoot_Loaded(object sender, RoutedEventArgs e)
+        {
+            textBox1.Focus();
+        }
+
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
+            myTextBlock.Text = myMethod("Adam");
+        }
+
+        private string myMethod(string name)
+        {
+            return String.Format("hello from method {0}", name);
         }
     }
 }

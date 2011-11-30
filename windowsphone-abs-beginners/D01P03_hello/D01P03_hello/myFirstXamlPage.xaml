@@ -14,7 +14,7 @@
     shell:SystemTray.IsVisible="True">
 
     <!--LayoutRoot is the root grid where all page content is placed-->
-    <Grid x:Name="LayoutRoot" Background="Transparent">
+    <Grid x:Name="LayoutRoot" Background="Transparent" Loaded="LayoutRoot_Loaded">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
@@ -30,6 +30,8 @@
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
             <Button Content="click me!" Height="72" HorizontalAlignment="Left" Margin="80,27,0,0" Name="clickMeButton" VerticalAlignment="Top" Width="160" Click="clickMeButton_Click" />
             <TextBlock Height="171" HorizontalAlignment="Left" Margin="97,133,0,0" Name="myTextBlock" Text="...." VerticalAlignment="Top" Width="220" />
+            <TextBox Height="72" HorizontalAlignment="Left" Margin="12,186,0,0" Name="textBox1" Text="TextBox" VerticalAlignment="Top" Width="460" TextChanged="textBox1_TextChanged" />
+            <Button Content="Button" Height="72" HorizontalAlignment="Left" Margin="268,27,0,0" Name="button1" VerticalAlignment="Top" Width="160" Click="button1_Click" />
         </Grid>
     </Grid>
  
