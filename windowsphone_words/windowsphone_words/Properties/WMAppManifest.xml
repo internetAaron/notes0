@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2009/deployment" AppPlatformVersion="7.1">
-  <App xmlns="" ProductID="{1c9f2f9d-4d22-42b2-b2f9-ff60a0f56f4c}" Title="windowsphone_words" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal"  Author="windowsphone_words author" Description="Sample description" Publisher="windowsphone_words">
-    <IconPath IsRelative="true" IsResource="false">ApplicationIcon.png</IconPath>
+  <App xmlns="" ProductID="{1c9f2f9d-4d22-42b2-b2f9-ff60a0f56f4c}" Title="Guess a word" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal"  Author="AJ" Description="Sample game" Publisher="testapp">
+    <IconPath IsRelative="true" IsResource="false">99 - Copy.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_GAMERSERVICES"/>
       <Capability Name="ID_CAP_IDENTITY_DEVICE"/>
