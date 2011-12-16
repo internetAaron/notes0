@@ -1,0 +1,16 @@
+<h1>My 10 min blog!</h1>
+
+<% @posts.each do |post| %>
+  <h2><%= link_to post.title, post %></h2>
+  <p> <%= time_ago_in_words post.created_at %> ago
+  <p> <%= truncate post.text %>
+  <tr>
+    <td><%= link_to 'Show', post %></td>
+    <td><%= link_to 'Edit', edit_post_path(post) %></td>
+    <td><%= link_to 'Destroy', post, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+
+<br />
+
+<%= link_to 'New Post', new_post_path %>
