@@ -2,7 +2,7 @@ just some drafts, for learning purposes
 
 [![img_simplyrails]](http://www.amazon.com/Simply-Rails-2-0-Patrick-Lenz/dp/0980455200)
 
-[![img_simplyrails]](http://www.amazon.com/Simply-Rails-2-0-Patrick-Lenz/dp/0980455200)
+[![img_simplyrails]][lnk_simplyrails]
 
 
 Ruby
@@ -16,12 +16,6 @@ Rails
 [Blog in less than 10 minutes using Ruby on Rails](http://ontwik.com/ruby/blog-in-less-than-10-minutes-using-ruby-on-rails/)
 
 [Rails for Zombies](http://railsforzombies.org/)
-
-[Simply Rails 2](http://www.amazon.com/Simply-Rails-2-0-Patrick-Lenz/dp/0980455200)
-
-[Simply Rails 2](lnk_simplyrails)
-
-[Simply Rails 2]([lnk_simplyrails])
 
 [Simply Rails 2][lnk_simplyrails]
 
