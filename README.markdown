@@ -2,6 +2,8 @@ just some drafts, for learning purposes
 
 [![img_simplyrails]](http://www.amazon.com/Simply-Rails-2-0-Patrick-Lenz/dp/0980455200)
 
+[![img_simplyrails]](http://www.amazon.com/Simply-Rails-2-0-Patrick-Lenz/dp/0980455200)
+
 
 Ruby
 ====
@@ -15,6 +17,13 @@ Rails
 
 [Rails for Zombies](http://railsforzombies.org/)
 
+[Simply Rails 2](http://www.amazon.com/Simply-Rails-2-0-Patrick-Lenz/dp/0980455200)
+
+[Simply Rails 2](lnk_simplyrails)
+
+[Simply Rails 2]([lnk_simplyrails])
+
+[Simply Rails 2][lnk_simplyrails]
 
 
 
@@ -23,6 +32,5 @@ Rails
 
 
 
-
-
+[lnk_simplyrails]: http://www.amazon.com/Simply-Rails-2-0-Patrick-Lenz/dp/0980455200
 [img_simplyrails]: http://bks4.books.google.co.uk/books?id=dyozLQAACAAJ&printsec=frontcover&img=1&zoom=1
