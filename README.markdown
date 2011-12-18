@@ -1,13 +1,9 @@
 just some drafts, for learning purposes
 
 [![img_simplyrails]][lnk_simplyrails]
-
 ![img_rubypl]
-
 ![img_tryruby]
-
 ![img_test1]
-
 ![img_test2]
 
 
