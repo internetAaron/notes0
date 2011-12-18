@@ -2,9 +2,10 @@ just some drafts, for learning purposes
 
 [![img_simplyrails]][lnk_simplyrails]
 ![img_rubypl]
-![img_tryruby]
 ![img_test1]
 ![img_test2]
+![img_test3]
+
 
 
 Ruby
@@ -25,8 +26,8 @@ Rails
 
 
 [img_test1]: http://bks7.books.google.lv/books?id=ue5SAAAAMAAJ&printsec=frontcover&img=1&zoom=1&h=160
-[img_test2]: http://books.google.lv/books?id=jMCO096qlRsC&hl=lv&source=gbs_slider_cls_metadata_8_mylibrary
-
+[img_test2]: http://bks3.books.google.lv/books?id=jMCO096qlRsC&printsec=frontcover&img=1&zoom=1&h=160
+[img_test3]: http://bks6.books.google.lv/books?id=3XcW4oJ8goIC&printsec=frontcover&img=1&zoom=1&h=160
 
 [img_rubypl]: http://bks0.books.google.lv/books?id=jcUbTcr5XWwC&printsec=frontcover&img=1&zoom=1&h=160
 
