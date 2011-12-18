@@ -2,7 +2,13 @@ just some drafts, for learning purposes
 
 [![img_simplyrails]][lnk_simplyrails]
 
+![img_rubypl]
+
 ![img_tryruby]
+
+![img_test1]
+
+![img_test2]
 
 
 Ruby
@@ -22,9 +28,11 @@ Rails
 
 
 
+[img_test1]: http://bks7.books.google.lv/books?id=ue5SAAAAMAAJ&printsec=frontcover&img=1&zoom=1&h=160
+[img_test2]: http://books.google.lv/books?id=jMCO096qlRsC&hl=lv&source=gbs_slider_cls_metadata_8_mylibrary
 
 
-
+[img_rubypl]: http://bks0.books.google.lv/books?id=jcUbTcr5XWwC&printsec=frontcover&img=1&zoom=1&h=160
 
 [lnk_simplyrails]: http://www.amazon.com/Simply-Rails-2-0-Patrick-Lenz/dp/0980455200
 [img_simplyrails]: http://bks4.books.google.co.uk/books?id=dyozLQAACAAJ&printsec=frontcover&img=1&zoom=1
