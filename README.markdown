@@ -1,11 +1,12 @@
 just some drafts, for learning purposes
 
 [![img_simplyrails]][lnk_simplyrails]
+<!-- 
 [![img_rubypl]]     [lnk_simplyrails]
 [![img_test1]]      [lnk_simplyrails]
 [![img_test2]]      [lnk_simplyrails]
 [![img_test3]]      [lnk_simplyrails]
-
+-->
 
 
 
