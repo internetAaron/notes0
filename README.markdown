@@ -1,8 +1,8 @@
 just some drafts, for learning purposes
 
-[![img_simplyrails]](http://www.amazon.com/Simply-Rails-2-0-Patrick-Lenz/dp/0980455200)
-
 [![img_simplyrails]][lnk_simplyrails]
+
+![img_tryruby]
 
 
 Ruby
@@ -28,3 +28,6 @@ Rails
 
 [lnk_simplyrails]: http://www.amazon.com/Simply-Rails-2-0-Patrick-Lenz/dp/0980455200
 [img_simplyrails]: http://bks4.books.google.co.uk/books?id=dyozLQAACAAJ&printsec=frontcover&img=1&zoom=1
+
+[img_tryruby]: https://d1ffx7ull4987f.cloudfront.net/images/courses/large_video_placeholder/6/try-ruby-e5c4e60c3b82ce8d76f36cdbebd199f9.jpg
+[lnk_tryruby]: https://d1ffx7ull4987f.cloudfront.net/images/courses/large_video_placeholder/6/try-ruby-e5c4e60c3b82ce8d76f36cdbebd199f9.jpg
