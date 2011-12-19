@@ -41,11 +41,11 @@ From zero to deploy * A demo app * Mostly static pages * Rails-flavored Ruby * F
 
 [Ruby on Rails Tutorial by Michael Hartl][lnk_railstutorial]
 
-<span color="green">
+<font color="green">
 
 From zero to deploy * A demo app * Mostly static pages * Rails-flavored Ruby * Filling in the layout * Modeling and viewing users, part I * Modeling and viewing users, part II * Sign up * Sign in, sign out * Updating, showing, and deleting users * User microposts * Following users * Rails 3.1
 
-</span>
+</font>
 
 
 [lnk_railstutorial]: http://ruby.railstutorial.org/ruby-on-rails-tutorial-book
