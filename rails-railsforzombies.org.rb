@@ -615,5 +615,5 @@ end
 # 5/5
 Create a named route. It should generate a path like '/zombies/:name' where :name is a parameter, and points to the index action in ZombiesController. Name the route 'graveyard'
 RailsForZombies::Application.routes.draw do
-  match 'zombies/:name' => 'Zombies#index'
+  get '/zombies/:name', to: 'zombies#index', :as => 'graveyard'
 end
