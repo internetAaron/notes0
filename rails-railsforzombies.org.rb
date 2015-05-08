@@ -566,7 +566,7 @@ end
 # Add a before filter which calls a method to check if a zombie has no tweets. Redirect to zombies_path if they dont have tweets. Only on show.
 class ZombiesController < ApplicationController
   before_filter :find_zombie
-  before_filter :find_tweet, :only => [:show]
+  before_filter :find_tweet, only: :show
 
   def show
     render :action => :show
