@@ -597,7 +597,7 @@ end
 # 2/5
 # Create a custom route so that /undead will go to the undead action on the ZombiesController
 RailsForZombies::Application.routes.draw 
-  match 'undead' => "Zombies#undead"
+  get 'undead' => 'zombies#undead'
 end
 
 #3/5
