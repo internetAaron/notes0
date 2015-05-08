@@ -603,7 +603,7 @@ end
 #3/5
 # Create redirect /undead to /zombies
 RailsForZombies::Application.routes.draw 
-  match 'undead' => redirect('zombies')
+  get '/undead', to: redirect('/zombies')
 end
 
 # 4/5
