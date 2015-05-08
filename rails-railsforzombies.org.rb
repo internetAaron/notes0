@@ -609,7 +609,7 @@ end
 # 4/5
 # Create a root route to ZombiesController index action
 RailsForZombies::Application.routes.draw do
-  root :to => 'Zombies#index'
+  root to: 'zombies#index'
 end
 
 # 5/5
